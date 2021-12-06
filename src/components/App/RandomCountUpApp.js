@@ -1,9 +1,15 @@
 import React from 'react';
 
-export const RandomCountUpApp = ({ count }) => {
+export const RandomCountUpApp = ({ count, isComplete }) => {
+  const completeStyle = !isComplete
+    ? null
+    : {
+        animationName: 'none',
+      };
+
   return (
     <div className="randomCountUp">
-      <output>{count}</output>
+      <output style={completeStyle}>{count}</output>
     </div>
   );
 };
