@@ -1,16 +1,9 @@
-import { createElement as h } from 'react';
+import React from 'react';
 
-// App Component 모듈 관리
-export default function App(props) {
+export default function App({ greetingMessage }) {
   return (
-    h(
-      'div',
-      {className: 'app'},
-      h(
-        'h1',
-        null,
-        props.greetingMessage
-      )
-    )
-  )
+    <div className="app">
+      <h1>{greetingMessage}</h1>
+    </div>
+  );
 }
