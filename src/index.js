@@ -1,18 +1,10 @@
-import { logger, getRandomMinMax, transformText } from './utils';
+import { createElement as h } from 'react';
+import { render } from 'react-dom';
+import { App } from './components';
 
-logger(
-  getRandomMinMax(),
-  transformText(`
-    font-size: 5rem;
-    font-weight: 700;
-  `)
-);
 
-logger(
-  getRandomMinMax(50, 99),
-  transformText(`
-    font-size: 5rem;
-    font-weight: 700;
-    color: salmon;
-  `)
+// ReactDOM render
+render(
+  h(App, { greetingMessage: '안녕! React 😃' }),
+  document.getElementById('root')
 );
