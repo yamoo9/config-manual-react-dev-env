@@ -1,0 +1,10 @@
+node_modules
+coverage
+build
+dist
+
+.env
+.vscode
+
+.Icon
+.DS_Store

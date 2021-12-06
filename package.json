@@ -6,12 +6,23 @@
   "scripts": {
     "start": "",
     "serve": "",
-    "bundle": "",
+    "bundle": "webpack",
     "watch": "",
     "build": "",
     "clear": ""
   },
-  "keywords": ["react", "webpack", "babel", "sass", "postcss"],
+  "keywords": [
+    "react",
+    "webpack",
+    "babel",
+    "sass",
+    "postcss"
+  ],
   "author": "yamoo9 <yamoo9@euid.dev>",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.64.4",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.6.0"
+  }
 }
