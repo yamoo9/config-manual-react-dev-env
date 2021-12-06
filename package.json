@@ -6,9 +6,9 @@
   "scripts": {
     "start": "",
     "serve": "",
-    "bundle": "webpack",
-    "watch": "",
-    "build": "",
+    "bundle": "webpack --target web --mode development",
+    "watch": "npm run bundle -- --watch",
+    "build": "webpack build --target web --mode production",
     "clear": ""
   },
   "keywords": [
