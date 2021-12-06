@@ -17,7 +17,7 @@
 .randomCountUp output {
   user-select: none;
   cursor: inherit;
-  animation: wiggle step(3) 600ms infinite alternate;
+  animation: wiggle steps(3) 600ms infinite alternate;
 }
 
 @keyframes wiggle {
