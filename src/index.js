@@ -16,12 +16,10 @@ let bgmNode = null;
 // let bgmNodeID = 'bgsound';
 settings.autoPlaySound({
   src: '/assets/bgm-count.mp3' /* required */,
-  resolved: (audioNode) => {
+  resolve: (audioNode) => {
     bgmNode = audioNode;
     bgmNode.loop = true;
-    // bgmNode.play();
   },
-  // rejected: (errorMessage) => {}
 });
 
 function render(count, isComplete) {
@@ -36,8 +34,12 @@ function animate() {
   let isComplete = count >= TARGET;
   render(count, isComplete);
   if (!isComplete) {
-    // 재귀 호출
+    if (bgmNode && !bgmNode.playing) {
+      bgmNode.play();
+    }
     window.requestAnimationFrame(animate);
+  } else {
+    bgmNode.pause();
   }
 }
 
