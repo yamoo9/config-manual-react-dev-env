@@ -12,6 +12,18 @@ const rootNode = document.getElementById('root');
 settings.setDocumentTitle(`(${TARGET}) 랜덤 카운트 업 앱! (with React ⚛)`);
 settings.clickDocumentReloadBrowser();
 
+let bgmNode = null;
+// let bgmNodeID = 'bgsound';
+settings.autoPlaySound({
+  src: '/assets/bgm-count.mp3' /* required */,
+  resolved: (audioNode) => {
+    bgmNode = audioNode;
+    bgmNode.loop = true;
+    // bgmNode.play();
+  },
+  // rejected: (errorMessage) => {}
+});
+
 function render(count, isComplete) {
   domRender(
     <RandomCountUpApp count={count} isComplete={isComplete} />,
