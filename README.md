@@ -4,7 +4,7 @@
 - [x]  Webpack, Webpack Dev Server
 - [x]  React, ReactDOM
 - [x]  Configuration Babel Loader
-- [ ]  Configuration Style, CSS Loader
+- [x]  Configuration Style, CSS Loader
 - [ ]  Configuration PostCSS Loader
 - [ ]  Configuration Test Runner
 - [ ]  Configuration Browserslist

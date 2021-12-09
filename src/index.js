@@ -1,3 +1,4 @@
+import './styles/main.css';
 import React from 'react';
 import { render as domRender } from 'react-dom';
 import { RandomCountUpApp } from './components';
