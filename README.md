@@ -5,5 +5,9 @@
 - [x]  React, ReactDOM
 - [x]  Configuration Babel Loader
 - [ ]  Configuration Style, CSS Loader
-- [ ]  Configuration Sass Loader
 - [ ]  Configuration PostCSS Loader
+- [ ]  Configuration Test Runner
+- [ ]  Configuration Browserslist
+- [ ]  Configuration Sass Loader
+- [ ]  Management Assets
+- [ ]  Configuration SVG Component
