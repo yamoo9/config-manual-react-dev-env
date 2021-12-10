@@ -1,7 +1,14 @@
+const path = require('path');
+const __root = process.cwd();
+
 const devConfig = {
   target: ['web'],
   mode: 'development',
   devtool: 'source-map',
+  output: {
+    path: path.resolve(__root, 'dist'),
+    filename: 'js/[name].js',
+  },
   module: {
     rules: [
       {

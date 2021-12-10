@@ -1,5 +1,7 @@
 const { merge } = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const devConfig = require('./config.dev');
 
 const filteredRules = devConfig.module.rules.filter(
@@ -23,6 +25,9 @@ const buildConfig = merge(devConfig, {
       filename: 'css/[name].min.css',
     }),
   ],
+  optimization: {
+    minimizer: [new CssMinimizerPlugin(), new TerserPlugin()],
+  },
 });
 
 module.exports = buildConfig;
