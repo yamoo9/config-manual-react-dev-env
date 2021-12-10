@@ -3,11 +3,16 @@ module.exports = {
     browser: true,
     es2021: true,
     node: true,
+    'jest/globals': true,
   },
+  // globals: {
+  //   jest: true
+  // },
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:jsx-a11y/recommended',
+    'plugin:jest/recommended',
     'prettier',
   ],
   parserOptions: {
@@ -17,7 +22,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', 'jsx-a11y', 'prettier'],
+  plugins: ['react', 'jsx-a11y', 'prettier', 'jest'],
   rules: {
     'react/prop-types': 'warn',
     'prettier/prettier': 'error',

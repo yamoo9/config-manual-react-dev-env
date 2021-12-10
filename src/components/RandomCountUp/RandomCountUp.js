@@ -1,6 +1,7 @@
+// import './RandomCountUp.css';
 import React from 'react';
 
-export const RandomCountUpApp = ({ count, isComplete }) => {
+export const RandomCountUp = ({ count, isComplete }) => {
   const completeStyle = !isComplete
     ? null
     : {
