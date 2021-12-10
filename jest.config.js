@@ -3,7 +3,7 @@ module.exports = {
   collectCoverage: false,
   coverageDirectory: 'coverage',
   roots: ['<rootDir>/src'],
-  setupFilesAfterEnv: ['<rootDir>/setupTest.js'],
+  setupFilesAfterEnv: ['<rootDir>/src/setupTest.js'],
   testEnvironment: 'jsdom',
   testPathIgnorePatterns: ['/node_modules/', '/dist/'],
   moduleNameMapper: {

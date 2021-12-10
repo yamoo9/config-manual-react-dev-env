@@ -20,7 +20,7 @@ npx degit yamoo9/cre <project_name>
 - [x]  React, ReactDOM
 - [x]  Configuration Babel Loader
 - [x]  Configuration Style, CSS Loader
-- [ ]  Configuration Test Runner
+- [x]  Configuration Test Runner
 - [ ]  Configuration PostCSS Loader
 - [ ]  Configuration Browserslist
 - [ ]  Configuration Sass Loader
