@@ -1,9 +1,12 @@
 module.exports = {
   clearMocks: true,
-  collectCoverage: true,
+  collectCoverage: false,
   coverageDirectory: 'coverage',
   roots: ['<rootDir>/src'],
-  setupFilesAfterEnv: ['./setupTest.js'],
+  setupFilesAfterEnv: ['<rootDir>/setupTest.js'],
   testEnvironment: 'jsdom',
   testPathIgnorePatterns: ['/node_modules/', '/dist/'],
+  moduleNameMapper: {
+    '\\.css$': 'identity-obj-proxy',
+  },
 };

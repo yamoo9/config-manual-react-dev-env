@@ -1,4 +1,4 @@
-// import './RandomCountUp.css';
+import './RandomCountUp.css';
 import React from 'react';
 
 export const RandomCountUp = ({ count, isComplete }) => {
@@ -9,7 +9,7 @@ export const RandomCountUp = ({ count, isComplete }) => {
       };
 
   return (
-    <div className="randomCountUp">
+    <div className="randomCountUp" data-testid="container">
       <output style={completeStyle}>{count}</output>
     </div>
   );

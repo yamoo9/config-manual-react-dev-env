@@ -9,7 +9,7 @@
     "bundle": "webpack --config webpack/config.dev.js",
     "build": "webpack build --config webpack/config.build.js",
     "test": "jest --watchAll",
-    "clear": ""
+    "test:coverage": "jest --coverage"
   },
   "keywords": [
     "react",
@@ -35,6 +35,7 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.27.1",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^27.4.4",
     "mini-css-extract-plugin": "^2.4.5",
     "prettier": "^2.5.1",
