@@ -7,7 +7,7 @@
 :root {
   --color-primary: rgb(97 53 216);
   --color-secondary: #74c758;
-  --size-base-rem: $space;
+  --size-base-rem: 10px;
 }
 
 :--section-headings {
@@ -16,7 +16,6 @@
 }
 
 html {
-  margin: $space;
   font-size: var(--size-base-rem);
 }
 
