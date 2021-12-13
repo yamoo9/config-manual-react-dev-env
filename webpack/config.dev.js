@@ -27,18 +27,24 @@ const devConfig = {
         use: 'babel-loader',
       },
       {
-        test: /\.css$/i,
+        test: /\.(css|s[ac]ss)$/i,
         use: [
           'style-loader',
           {
             loader: 'css-loader',
             options: {
-              importLoaders: 1,
+              importLoaders: 2,
               sourceMap: true,
             },
           },
           {
             loader: 'postcss-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+          {
+            loader: 'sass-loader',
             options: {
               sourceMap: true,
             },
