@@ -1,5 +1,10 @@
 @import url('./common/initializer.css');
 
+$margin-base: 10px;
+
+// 사용자 정의 미디어 쿼리
+@custom-media --viewport-md (min-width: 640px) and (max-width: 1024px);
+
 // 사용자 정의 선택자
 @custom-selector :--section-headings section h1, section h2, section h3;
 
@@ -7,7 +12,7 @@
 :root {
   --color-primary: rgb(97 53 216);
   --color-secondary: #74c758;
-  --size-base-rem: 10px;
+  --size-base-rem: #{$margin-base};
 }
 
 :--section-headings {
@@ -20,7 +25,14 @@ html {
 }
 
 body {
+  margin: var(--size-base-rem);
   color: var(--color-primary);
+}
+
+@media (--viewport-md) {
+  :root {
+    --size-base-rem: #{$margin-base * 0};
+  }
 }
 
 // 중첩 규칙
