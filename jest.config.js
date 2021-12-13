@@ -7,6 +7,6 @@ module.exports = {
   testEnvironment: 'jsdom',
   testPathIgnorePatterns: ['/node_modules/', '/dist/'],
   moduleNameMapper: {
-    '\\.css$': 'identity-obj-proxy',
+    '\\.s?[ac]ss$': 'identity-obj-proxy',
   },
 };
