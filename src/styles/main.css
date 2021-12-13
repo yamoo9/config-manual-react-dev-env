@@ -1,1 +1,37 @@
 @import url("./common/initializer.css");
+
+/* PostCSS 기능 실습 데모 코드 작성 */
+
+/* 사용자 정의 선택자 */
+@custom-selector :--section-headings section h1, section h2, section h3;
+
+/* 사용자 정의 속성(변수) */
+:root {
+  --color-primary: rgb(97 53 216);
+  --color-secondary: #74c758;
+  --size-base-rem: 10px;
+}
+
+:--section-headings {
+  font-size: calc(var(--size-base-rem) * 1.6);
+  color: var(--color-secondary);
+}
+
+html {
+  font-size: var(--size-base-rem);
+}
+
+body {
+  color: var(--color-primary);
+}
+
+/* 중첩 규칙 */
+a {
+  & img {
+    vertical-align: middle;
+  }
+
+  &:hover {
+    outline: none;
+  }
+}
