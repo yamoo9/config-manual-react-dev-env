@@ -8,9 +8,19 @@ const devConfig = {
   output: {
     path: path.resolve(__root, 'dist'),
     filename: 'js/[name].js',
+    assetModuleFilename: 'assets/[name].[contenthash][ext][query]',
   },
   module: {
     rules: [
+      {
+        test: /\.(jpe?g|gif|png|webp|bmp|svg)$/,
+        type: 'asset',
+        parser: {
+          dataUrlCondition: {
+            maxSize: 10 * 1024, // 10kb
+          },
+        },
+      },
       {
         test: /\.jsx?$/i,
         exclude: /(node_modules|dist)/,

@@ -4,7 +4,10 @@ const devConfig = require('./config.dev');
 const serverConfig = merge(devConfig, {
   devServer: {
     port: 3000,
-    static: ['dist', 'src'],
+    static: [
+      'dist',
+      // 'src'
+    ],
   },
 });
 
