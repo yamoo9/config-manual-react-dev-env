@@ -13,13 +13,33 @@ const devConfig = {
   module: {
     rules: [
       {
-        test: /\.(jpe?g|gif|png|webp|bmp|svg)$/,
+        test: /\.(jpe?g|gif|png|webp|bmp)$/,
         type: 'asset',
         parser: {
           dataUrlCondition: {
             maxSize: 10 * 1024, // 10kb
           },
         },
+      },
+      // {
+      //   test: /\.svg$/i,
+      //   type: 'asset',
+      //   resourceQuery: /url/,
+      // },
+      {
+        test: /\.svg$/i,
+        issuer: /\.jsx?$/,
+        use: [
+          {
+            loader: '@svgr/webpack',
+            options: {
+              prettier: false,
+              titleProp: true,
+              svgo: true,
+            },
+          },
+          'url-loader',
+        ],
       },
       {
         test: /\.jsx?$/i,
