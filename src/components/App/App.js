@@ -1,10 +1,7 @@
 import React from 'react';
-import reactLogoPath, {
-  ReactComponent as ReactLogo,
-} from '../../assets/react.svg';
-
-console.log(reactLogoPath); // asset SVG (file path)
-console.log(ReactLogo); // SVGR (React Component)
+// import reactLogoPath, { ReactComponent as ReactLogo, } from '../../assets/react.svg';
+import ReactLogo from '../../assets/react.svg?react';
+import reactLogoPath from '../../assets/react.svg';
 
 export default function App({ greetingMessage }) {
   return (

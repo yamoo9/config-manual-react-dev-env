@@ -21,26 +21,55 @@ const devConfig = {
           },
         },
       },
-      // {
-      //   test: /\.svg$/i,
-      //   type: 'asset',
-      //   resourceQuery: /url/,
-      // },
+
+      // 참고: https://bit.ly/3EWg661
+      //      https://bit.ly/3ESczFO
+      //      Webpack v5부터 사용 가능한 방식
       {
         test: /\.svg$/i,
-        issuer: /\.jsx?$/,
-        use: [
+        oneOf: [
           {
-            loader: '@svgr/webpack',
-            options: {
-              prettier: false,
-              titleProp: true,
-              svgo: true,
+            issuer: /\.jsx?$/,
+            resourceQuery: /react/, // *.svg?react
+            use: [
+              {
+                loader: '@svgr/webpack',
+                options: {
+                  prettier: false,
+                  titleProp: true,
+                  svgo: true,
+                },
+              },
+            ],
+          },
+          {
+            type: 'asset',
+            parser: {
+              dataUrlCondition: {
+                maxSize: 40 * 1024, // 40kb
+              },
             },
           },
-          'url-loader',
         ],
       },
+
+      // 참고: https://bit.ly/3DNo5AV
+      //      create-react-app 툴체인과 동일한 방식
+      // {
+      //   test: /\.svg$/i,
+      //   issuer: /\.jsx?$/,
+      //   use: [
+      //     {
+      //       loader: '@svgr/webpack',
+      //       options: {
+      //         prettier: false,
+      //         titleProp: true,
+      //         svgo: true,
+      //       },
+      //     },
+      //     'url-loader',
+      //   ],
+      // },
       {
         test: /\.jsx?$/i,
         exclude: /(node_modules|dist)/,
