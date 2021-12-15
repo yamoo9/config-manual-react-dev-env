@@ -21,11 +21,11 @@ npx degit yamoo9/cre <project_name>
 - [x]  Configuration Babel Loader
 - [x]  Configuration Style, CSS Loader
 - [x]  Configuration Test Runner
-- [ ]  Configuration PostCSS Loader
-- [ ]  Configuration Browserslist
-- [ ]  Configuration Sass Loader
-- [ ]  Management Assets
-- [ ]  Configuration SVG Component
-- [ ]  Absolute(Alias) Path
+- [x]  Configuration PostCSS Loader
+- [x]  Configuration Browserslist
+- [x]  Configuration Sass Loader
+- [x]  Management Assets
+- [x]  Configuration SVG Component
+- [x]  Absolute(Alias) Path
 - [ ]  Cleaning & HTML Template
 - [ ]  React Fast Refresh
