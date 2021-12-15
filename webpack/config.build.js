@@ -12,8 +12,18 @@ const buildConfig = merge(devConfig, {
       const { test: regExp } = rule;
       if (regExp.test('.css')) {
         return {
-          test: /\.css$/i,
-          use: [MiniCssExtractPlugin.loader, 'css-loader'],
+          test: /\.(css|s[ac]ss)$/i,
+          use: [
+            MiniCssExtractPlugin.loader,
+            {
+              loader: 'css-loader',
+              options: {
+                importLoaders: 2,
+              },
+            },
+            'postcss-loader',
+            'sass-loader',
+          ],
         };
       }
       return rule;
