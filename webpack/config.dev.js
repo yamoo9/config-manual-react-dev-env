@@ -5,6 +5,11 @@ const devConfig = {
   target: ['web'],
   mode: 'development',
   devtool: 'source-map',
+  resolve: {
+    alias: {
+      '@': path.resolve(__root, 'src'),
+    },
+  },
   output: {
     path: path.resolve(__root, 'dist'),
     filename: 'js/[name].js',
@@ -21,55 +26,21 @@ const devConfig = {
           },
         },
       },
-
-      // 참고: https://bit.ly/3EWg661
-      //      https://bit.ly/3ESczFO
-      //      Webpack v5부터 사용 가능한 방식
       {
         test: /\.svg$/i,
-        oneOf: [
+        issuer: /\.jsx?$/,
+        use: [
           {
-            issuer: /\.jsx?$/,
-            resourceQuery: /react/, // *.svg?react
-            use: [
-              {
-                loader: '@svgr/webpack',
-                options: {
-                  prettier: false,
-                  titleProp: true,
-                  svgo: true,
-                },
-              },
-            ],
-          },
-          {
-            type: 'asset',
-            parser: {
-              dataUrlCondition: {
-                maxSize: 40 * 1024, // 40kb
-              },
+            loader: '@svgr/webpack',
+            options: {
+              prettier: false,
+              titleProp: true,
+              svgo: true,
             },
           },
+          'url-loader',
         ],
       },
-
-      // 참고: https://bit.ly/3DNo5AV
-      //      create-react-app 툴체인과 동일한 방식
-      // {
-      //   test: /\.svg$/i,
-      //   issuer: /\.jsx?$/,
-      //   use: [
-      //     {
-      //       loader: '@svgr/webpack',
-      //       options: {
-      //         prettier: false,
-      //         titleProp: true,
-      //         svgo: true,
-      //       },
-      //     },
-      //     'url-loader',
-      //   ],
-      // },
       {
         test: /\.jsx?$/i,
         exclude: /(node_modules|dist)/,
