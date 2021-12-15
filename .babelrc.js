@@ -1,4 +1,4 @@
-const plugins = [];
+const plugins = ["@babel/plugin-proposal-export-default-from"];
 
 if (process.env.NODE_ENV === 'production') {
   plugins.push('babel-plugin-jsx-remove-data-test-id');
